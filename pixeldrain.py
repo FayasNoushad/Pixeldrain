@@ -16,5 +16,11 @@ def upload_file(file):
 
 
 def info(file_id):
+    """
+    Returns information about one or more files.
+    You can also put a comma separated list of file IDs in the URL and it will return an array of file info, instead of a single object.
+    
+    info(file_id)
+    """
     info = requests.get(f"https://pixeldrain.com/api/file/{file_id}/info")
     return info
