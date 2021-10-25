@@ -15,6 +15,17 @@ def upload_file(file):
     return response
 
 
+def file(file_id):
+    """
+    Returns the full file associated with the ID.
+    Supports byte range requests.
+    
+    file(file_id)
+    """
+    response = requests.get("https://pixeldrain.com/api/file/"+file_id)
+    return response
+
+
 def info(file_id):
     """
     Returns information about one or more files.
