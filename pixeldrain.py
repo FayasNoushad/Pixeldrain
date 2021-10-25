@@ -12,8 +12,9 @@ def upload_file(file):
         data={"anonymous": True},
         files={"file": open(file, "rb")}
     )
-    if response.json()["success"] is True:
-        info = requests.get(f"https://pixeldrain.com/api/file/{response.json()['id']}/info")
-        return info
-    else:
-        return response
+    return response
+
+
+def info(file_id):
+    info = requests.get(f"https://pixeldrain.com/api/file/{file_id}/info")
+    return info
