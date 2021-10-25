@@ -2,6 +2,11 @@ import requests
 
 
 def upload_file(file):
+    """
+    Upload a file to pixeldrain
+    
+    upload_file(file)
+    """
     response = requests.post(
         "https://pixeldrain.com/api/file",
         data={"anonymous": True},
