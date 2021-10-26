@@ -17,7 +17,7 @@ README = (file / "README.md").read_text()
 
 setup(
     name="Pixeldrain",
-    version="1.0.0",
+    version="1.0.1",
     author="FayasNoushad",
     long_description=README,
     long_description_content_type="text/markdown",
