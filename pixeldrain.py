@@ -15,6 +15,15 @@ def upload_file(file):
     return response
 
 
+def file(file_id):
+    """
+    Returns direct file link
+    
+    file(file_id)
+    """
+    return "https://pixeldrain.com/api/file/"+file_id
+
+
 def download_file(file_id, file_name):
     """
     Download the full file associated with the ID.
@@ -22,7 +31,7 @@ def download_file(file_id, file_name):
     
     download_file(file_id, file_name)
     """
-    response = requests.get("https://pixeldrain.com/api/file/"+file_id)
+    response = requests.get(file(file_id))
     with open(file_name, "wb") as file:
         file.write(response.content)
     return file_name
