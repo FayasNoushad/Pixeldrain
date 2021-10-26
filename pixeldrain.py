@@ -20,7 +20,7 @@ def download_file(file_id, file_name):
     Download the full file associated with the ID.
     Supports byte range requests.
     
-    file(file_id)
+    download_file(file_id, file_name)
     """
     response = requests.get("https://pixeldrain.com/api/file/"+file_id)
     with open(file_name, "wb") as file:
