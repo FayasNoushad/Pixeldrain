@@ -15,15 +15,17 @@ def upload_file(file):
     return response
 
 
-def file(file_id):
+def download_file(file_id, file_name):
     """
-    Returns the full file associated with the ID.
+    Download the full file associated with the ID.
     Supports byte range requests.
     
     file(file_id)
     """
     response = requests.get("https://pixeldrain.com/api/file/"+file_id)
-    return response
+    with open(file_name, "wb") as file:
+        file.write(response.content)
+    return file_name
 
 
 def info(file_id):
