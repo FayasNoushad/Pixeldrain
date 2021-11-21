@@ -33,11 +33,7 @@ file = pixeldrain.file("file_id")
 info = pixeldrain.info("file_id")
 # For information about the file
 
-thumbnail = pixeldrain.thumbnail(
-    "file_id",
-    width="180px",
-    height="180px"
-)
+thumbnail = pixeldrain.thumbnail("file_id", width="", height="")
 # For get thumbnail
 ```
 
