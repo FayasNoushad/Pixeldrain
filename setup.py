@@ -1,9 +1,8 @@
 import os
-import pathlib
-from setuptools import setup, find_packages
+import setuptools
 
 
-def requirements(file="requirements.txt") -> list:
+def requirements(file="requirements.txt"):
     if os.path.isfile(file):
         with open(file, encoding="utf-8") as r:
             return [i.strip() for i in r]
@@ -11,25 +10,39 @@ def requirements(file="requirements.txt") -> list:
         return []
 
 
-file = pathlib.Path(__file__).parent
+def readme(file="README.md"):
+    if os.path.isfile(file):
+        with open(file, encoding="utf8") as r:
+            return r.read()
+    else:
+        return ""
 
-README = (file / "README.md").read_text()
 
-setup(
+setuptools.setup(
     name="Pixeldrain",
-    version="1.0.2",
-    author="FayasNoushad",
-    long_description=README,
+    version="1.0.3",
+    description="Pixeldrain API",
+    long_description=readme(),
     long_description_content_type="text/markdown",
-    description="A pixeldrain python module using pixeldrain official api",
-    license="MIT",
     url="https://github.com/FayasNoushad/Pixeldrain",
+    download_url="https://github.com/FayasNoushad/Pixeldrain/releases/latest",
+    license="MIT",
+    author="Fayas Noushad",
+    author_email="contact@fayas.me",
     classifiers=[
-        "Programming Language :: Python :: 3",
+        "Intended Audience :: Developers",
+        "Natural Language :: English",
+        "Programming Language :: Python",
         "License :: OSI Approved :: MIT License",
-        "Operating System :: OS Independent",
+        "Operating System :: OS Independent"
     ],
-    packages=find_packages(),
-    install_requires=requirements(),
-    python_requires=">=3.6"
+    project_urls={
+        "Tracker": "https://github.com/FayasNoushad/Pixeldrain/issues",
+        "Source": "https://github.com/FayasNoushad/Pixeldrain",
+        "Documentation": "https://pixeldrain.projects.fayas.me",
+    },
+    python_requires=">=3.6",
+    packages=setuptools.find_packages(),
+    zip_safe=False,
+    install_requires=requirements()
 )
