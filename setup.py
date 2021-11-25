@@ -20,11 +20,10 @@ def readme(file="README.md"):
 
 setuptools.setup(
     name="Pixeldrain",
-    version="1.0.3",
+    version="1.0.4",
     description="Pixeldrain API",
     long_description=readme(),
     long_description_content_type="text/markdown",
-    url="https://github.com/FayasNoushad/Pixeldrain",
     download_url="https://github.com/FayasNoushad/Pixeldrain/releases/latest",
     license="MIT",
     author="Fayas Noushad",
@@ -38,8 +37,7 @@ setuptools.setup(
     ],
     project_urls={
         "Tracker": "https://github.com/FayasNoushad/Pixeldrain/issues",
-        "Source": "https://github.com/FayasNoushad/Pixeldrain",
-        "Documentation": "https://pixeldrain.projects.fayas.me",
+        "Source": "https://github.com/FayasNoushad/Pixeldrain"
     },
     python_requires=">=3.6",
     packages=setuptools.find_packages(),
