@@ -24,7 +24,6 @@ setuptools.setup(
     description="Pixeldrain API",
     long_description=readme(),
     long_description_content_type="text/markdown",
-    download_url="https://github.com/FayasNoushad/Pixeldrain/releases/latest",
     license="MIT",
     author="Fayas Noushad",
     classifiers=[
