@@ -27,7 +27,6 @@ setuptools.setup(
     download_url="https://github.com/FayasNoushad/Pixeldrain/releases/latest",
     license="MIT",
     author="Fayas Noushad",
-    author_email="contact@fayas.me",
     classifiers=[
         "Intended Audience :: Developers",
         "Natural Language :: English",
