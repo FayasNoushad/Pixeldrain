@@ -20,7 +20,7 @@ def readme(file="README.md"):
 
 setuptools.setup(
     name="Pixeldrain",
-    version="1.0.5",
+    version="1.0.6",
     description="Pixeldrain API",
     long_description=readme(),
     long_description_content_type="text/markdown",
@@ -40,7 +40,7 @@ setuptools.setup(
         "Source": "https://github.com/FayasNoushad/Pixeldrain"
     },
     python_requires=">=3.6",
-    py_modules=['pixeldrain']
+    py_modules=['pixeldrain'],
     packages=setuptools.find_packages(),
     zip_safe=False,
     install_requires=requirements()
