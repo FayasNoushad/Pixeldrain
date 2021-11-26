@@ -20,7 +20,7 @@ def readme(file="README.md"):
 
 setuptools.setup(
     name="Pixeldrain",
-    version="1.0.7",
+    version="1.0.8",
     description="Pixeldrain API",
     long_description=readme(),
     long_description_content_type="text/markdown",
