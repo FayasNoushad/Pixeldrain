@@ -1,19 +1,12 @@
-```
-Made with Python3
-(C) @FayasNoushad
-Copyright permission under MIT License
-License -> https://github.com/FayasNoushad/Pixeldrain/blob/main/LICENSE
-```
+# Pixeldrain
 
----
+A pixeldrain uploader and downloader made with pixeldrain api
 
 ## Installation
 
 ```
 pip install Pixeldrain
 ```
-
----
 
 ## Usage
 
@@ -36,12 +29,3 @@ info = pixeldrain.info("file_id")
 thumbnail = pixeldrain.thumbnail("file_id", width="", height="")
 # For get thumbnail
 ```
-
----
-
-## Credits
-
-- [Fayas Noushad](https://github.com/FayasNoushad)
-- [Pixeldrain API](https://pixeldrain.com/api)
-
----
