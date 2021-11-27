@@ -1,6 +1,6 @@
 # Pixeldrain
 
-A pixeldrain uploader and downloader made with pixeldrain api
+A media to pixeldrain uploader and pixeldrain media downloader made with pixeldrain api
 
 ## Installation
 
