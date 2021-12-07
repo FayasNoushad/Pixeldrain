@@ -14,18 +14,23 @@ pip install Pixeldrain
 import pixeldrain
 
 
-pixeldrain.upload_file("file_path")
 # For upload file
+pixeldrain.upload_file("file_path")
+# returns upload details
 
-pixeldrain.download_file("file_id", "file_name")
 # For get direct file
+pixeldrain.download_file("file_id", "file_name")
+# returns file name
 
-file = pixeldrain.file("file_id")
 # For get file link
+file = pixeldrain.file("file_id")
+# returns file link
 
-info = pixeldrain.info("file_id")
 # For information about the file
+info = pixeldrain.info("file_id")
+# returns information as json
 
-thumbnail = pixeldrain.thumbnail("file_id", width="", height="")
 # For get thumbnail
+thumbnail = pixeldrain.thumbnail("file_id", width="", height="")
+# returns thumbnail link
 ```
