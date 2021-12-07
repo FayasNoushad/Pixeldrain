@@ -12,7 +12,7 @@ def upload_file(file):
         data={"anonymous": True},
         files={"file": open(file, "rb")}
     )
-    return response
+    return response.json()
 
 
 def file(file_id):
@@ -45,7 +45,7 @@ def info(file_id):
     info(file_id)
     """
     info = requests.get(f"https://pixeldrain.com/api/file/{file_id}/info")
-    return info
+    return info.json()
 
 
 def thumbnail(file_id, width="", height=""):
