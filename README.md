@@ -4,8 +4,8 @@ A pixeldrain uploader and downloader made with pixeldrain api
 
 ## Installation
 
-```
-pip install Pixeldrain
+```sh
+pip3 install Pixeldrain
 ```
 
 ## Usage
@@ -14,23 +14,32 @@ pip install Pixeldrain
 import pixeldrain
 
 
-# For upload file
-pixeldrain.upload_file("file_path")
-# returns upload details
+# To get information about the file
+info = pixeldrain.info(file_id)
+# returns information as raw data
 
-# For get direct file
-pixeldrain.download_file("file_id", "file_name")
-# returns file name
-
-# For get file link
-file = pixeldrain.file("file_id")
+# To get file link
+file = pixeldrain.file(file_id)
 # returns file link
 
-# For information about the file
-info = pixeldrain.info("file_id")
-# returns information as json
+# To upload file
+pixeldrain.upload_file(file_path)
+# returns upload details
 
-# For get thumbnail
-thumbnail = pixeldrain.thumbnail("file_id", width="", height="")
+# To download file
+pixeldrain.download_file(file_id, file_name, file_path)
+# returns file name
+# "file_name" and "file_path" are optional
+
+# To get thumbnail
+thumbnail = pixeldrain.thumbnail(file_id, width, height)
 # returns thumbnail link
+# width and height are optional
 ```
+
+---
+
+## Thanks to
+
+- [Pixeldrain API](https://pixeldrain.com/api)
+- [Contributors](https://github.com/FayasNoushad/Pixeldrain/graphs/contributors)

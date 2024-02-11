@@ -1,0 +1,8 @@
+**/__pycache__
+**/venv
+**/test
+*.session
+*.session-journal
+*.pyc
+*.env
+test.py

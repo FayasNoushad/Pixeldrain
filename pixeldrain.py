@@ -1,6 +1,26 @@
 import requests
 
 
+def info(file_id):
+    """
+    Returns information about one or more files.
+    You can also put a comma separated list of file IDs in the URL and it will return an array of file info, instead of a single object.
+    
+    info(file_id)
+    """
+    info = requests.get(f"https://pixeldrain.com/api/file/{file_id}/info")
+    return info.json()
+
+
+def file(file_id):
+    """
+    Returns direct file link
+    
+    file(file_id)
+    """
+    return "https://pixeldrain.com/api/file/"+file_id
+
+
 def upload_file(file):
     """
     Upload a file to pixeldrain
@@ -15,37 +35,25 @@ def upload_file(file):
     return response.json()
 
 
-def file(file_id):
-    """
-    Returns direct file link
-    
-    file(file_id)
-    """
-    return "https://pixeldrain.com/api/file/"+file_id
-
-
-def download_file(file_id, file_name):
+def download_file(file_id, file_name="", file_path=""):
     """
     Download the full file associated with the ID.
     Supports byte range requests.
     
-    download_file(file_id, file_name)
+    download_file(file_id, file_name, file_path)
+    file_name and file_path is optional
     """
-    response = requests.get(file(file_id))
-    with open(file_name, "wb") as file:
-        file.write(response.content)
-    return file_name
-
-
-def info(file_id):
-    """
-    Returns information about one or more files.
-    You can also put a comma separated list of file IDs in the URL and it will return an array of file info, instead of a single object.
     
-    info(file_id)
-    """
-    info = requests.get(f"https://pixeldrain.com/api/file/{file_id}/info")
-    return info.json()
+    response = requests.get(file(file_id))
+    if file_name:
+        name = file_path+file_name
+    else:
+        file_info = info(file_id)
+        name = file_path+file_info["name"]
+    
+    with open(name, "wb") as f:
+        f.write(response.content)
+    return file_name
 
 
 def thumbnail(file_id, width="", height=""):
